@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Wijngilde</string>
+    <string name="events">Evenementen</string>
+    <string name="our_wines">Onze wijnen</string>
+    <string name="become_member">Lid worden</string>
+    <string name="welcome_title">Wijngilde Baal</string>
+    <string name="login">Aanmelden</string>
+    <string name="previous">Vorige</string>
+</resources>
