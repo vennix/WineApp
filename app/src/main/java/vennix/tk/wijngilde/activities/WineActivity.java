@@ -36,7 +36,7 @@ public class WineActivity extends AppCompatActivity {
 
         wineViewModel = ViewModelProviders.of(this).get(WineViewModel.class);
 
-        wineViewModel.getWineList().observe((LifecycleOwner) this, new Observer<List<Wine>>() {
+        wineViewModel.getWineList().observe(this, new Observer<List<Wine>>() {
             @Override
             public void onChanged(@Nullable List<Wine> wines) {
                 wineViewAdapter.addItems(wines);

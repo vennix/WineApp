@@ -1,4 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Wijngilde</string>
+    <string name="events">Evenementen</string>
+    <string name="our_wines">Onze wijnen</string>
+    <string name="become_member">Lid worden</string>
+    <string name="welcome_title">Wijngilde Baal</string>
+    <string name="login">Aanmelden</string>
+    <string name="previous">Vorige</string>
+    <string name="menu_events">Evenementen</string>
+    <string name="menu_wines">Onze wijnen</string>
+    <string name="menu_membership">Lid worden</string>
+    <string name="description_background">Achtergrond foto van wijn</string>
 </resources>
