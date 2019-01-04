@@ -33,6 +33,22 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activities.MemberActivity"
+            android:label="WineDetailActivity" >
+            <intent-filter>
+                <action android:name="vennix.tk.wijngilde.activities.MemberActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.EventActivity"
+            android:label="WineDetailActivity" >
+            <intent-filter>
+                <action android:name="vennix.tk.wijngilde.activities.EventActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

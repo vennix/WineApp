@@ -11,4 +11,9 @@
     <string name="menu_wines">Onze wijnen</string>
     <string name="menu_membership">Lid worden</string>
     <string name="description_background">Achtergrond foto van wijn</string>
+    <string name="who_we_are_title">Wij zijn wij</string>
+    <string name="who_we_are_text">"Wij zijn een vereneging die zich bezig houd met alles wat met wijn te maken heeft. Zo organiseren we wekelijks een avond om wijn te proeven. Elke week wordt deze avond georganiseerd met een ander thema. Verder organiseren wij jaarlijks verschillende evenementen waarop alle leden welkom zijn. We maken ook zelf enkele wijnen die op elke wijnproefavond kunnen geproeft en gekocht worden in ons ledenhuis. Aangezien we hierin reeds 30 jaar ervaring hebben, kunnen we toch spreken van enkele topwijnen binnen ons assortiment. Indien je interesse hebt om lid te worden, lees dan de sectie 'Lid worden'. Hierin staat uitgelegd hoe je je lid kan maken van onze vereneging."
+    </string>
+    <string name="become_member_title">Lid worden</string>
+    <string name="become_member_text">Je kan lid worden door je in te schrijven bij onze secretaris. Hij is op elke proefavond en evenement aanwezig. Je zal je jaarlijks lidgeld van 25€ dienen te voldoen en alsook dien je enkele gegevens in te vullen. Hiermee zal er een login en paswoord aangemaakt worden waarmee je via deze applicatie de mogelijkheid zal hebben om je in te schrijven op evenementen.</string>
 </resources>

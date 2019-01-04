@@ -42,7 +42,6 @@ public class WineActivity extends AppCompatActivity {
                 wineViewAdapter.addItems(wines);
             }
         });
-
     }
 
 }

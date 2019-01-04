@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- general app colors -->
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
@@ -17,5 +17,6 @@
     <color name="brown">#876C52</color>
     <color name="dark_brown">#6B4C2E</color>
     <color name="light_brown">#CDB6A0</color>
+    <color name="light_brown_trans">#CCCDB6A0</color>
 
 </resources>
