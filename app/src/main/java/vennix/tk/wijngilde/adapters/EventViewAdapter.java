@@ -28,7 +28,7 @@ public class EventViewAdapter extends RecyclerView.Adapter<EventViewAdapter.Recy
     public void onBindViewHolder(EventViewAdapter.RecyclerViewHolder recyclerViewHolder, int position) {
         Event event = eventList.get(position);
         recyclerViewHolder.nameTextView.setText(event.getName());
-        recyclerViewHolder.placesTextView.setText(event.getPlaces());
+        recyclerViewHolder.placesTextView.setText(Integer.toString(event.getPlaces()));
         recyclerViewHolder.itemView.setTag(event);
         //recyclerViewHolder.itemView.setOnLongClickListener(longClickListener);
     }

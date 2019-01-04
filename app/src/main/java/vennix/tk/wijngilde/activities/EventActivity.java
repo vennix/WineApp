@@ -12,33 +12,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 import vennix.tk.wijngilde.R;
-import vennix.tk.wijngilde.adapters.WineViewAdapter;
-import vennix.tk.wijngilde.entities.Wine;
-import vennix.tk.wijngilde.viewmodels.WineViewModel;
+import vennix.tk.wijngilde.adapters.EventViewAdapter;
+import vennix.tk.wijngilde.entities.Event;
+import vennix.tk.wijngilde.viewmodels.EventViewModel;
 
 public class EventActivity extends AppCompatActivity {
 
-    private WineViewModel wineViewModel;
-    private WineViewAdapter wineViewAdapter;
+    private EventViewModel eventViewModel;
+    private EventViewAdapter eventViewAdapter;
     private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wines);
+        setContentView(R.layout.activity_event);
 
-        recyclerView = findViewById(R.id.wine_list);
-        wineViewAdapter = new WineViewAdapter(new ArrayList<Wine>());
+        recyclerView = findViewById(R.id.event_list);
+        eventViewAdapter = new EventViewAdapter(new ArrayList<Event>());
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        recyclerView.setAdapter(wineViewAdapter);
+        recyclerView.setAdapter(eventViewAdapter);
 
-        wineViewModel = ViewModelProviders.of(this).get(WineViewModel.class);
+        eventViewModel = ViewModelProviders.of(this).get(EventViewModel.class);
 
-        wineViewModel.getWineList().observe(this, new Observer<List<Wine>>() {
+        eventViewModel.getEventList().observe(this, new Observer<List<Event>>() {
             @Override
-            public void onChanged(@Nullable List<Wine> wines) {
-                wineViewAdapter.addItems(wines);
+            public void onChanged(@Nullable List<Event> events) {
+                eventViewAdapter.addItems(events);
             }
         });
     }

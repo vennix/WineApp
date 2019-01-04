@@ -20,7 +20,7 @@ import vennix.tk.wijngilde.daos.KindDAO;
 import vennix.tk.wijngilde.daos.WineDAO;
 
 
-@Database(entities = {Wine.class, Kind.class, Event.class}, version = 4)
+@Database(entities = {Wine.class, Kind.class, Event.class}, version = 6)
 public abstract class WijnGildeDatabase extends RoomDatabase {
 
     public abstract WineDAO wineDao();
@@ -49,7 +49,8 @@ public abstract class WijnGildeDatabase extends RoomDatabase {
                                     });
                                 }
                             })
-                            .fallbackToDestructiveMigration()
+                            .addMigrations(MIGRATION_5_6)
+                            //.fallbackToDestructiveMigration()
                             .build();
                 }
             }
@@ -58,10 +59,21 @@ public abstract class WijnGildeDatabase extends RoomDatabase {
     }
 
     //migration from db version 1 to db version 2
-    static final Migration MIGRATION_3_4 = new Migration(3, 4) {
+    static final Migration MIGRATION_5_6 = new Migration(5, 6) {
         @Override
         public void migrate(@NonNull SupportSQLiteDatabase database) {
-            database.execSQL("CREATE TABLE 'event' ('event_id' INTEGER, 'name' TEXT, 'places' INTEGER, PRIMARY KEY('event_id'))");
+            //database.execSQL("CREATE TABLE 'event' ('event_id' INTEGER, 'name' TEXT, 'places' INTEGER, PRIMARY KEY('event_id'))");
+            database.execSQL("INSERT INTO 'kind' ('kind_id', 'name') VALUES ('1', 'rood')");
+            database.execSQL("INSERT INTO 'kind' ('kind_id', 'name') VALUES ('2', 'wit')");
+            database.execSQL("INSERT INTO 'kind' ('kind_id', 'name') VALUES ('3', 'rose')");
+
+            database.execSQL("INSERT INTO 'wine' ('wine_id', 'kind', 'name', 'description', 'alcohol_percentage') VALUES ('2', '1', 'Pomerol', 'lekkere wijn', '12.50')");
+            database.execSQL("INSERT INTO 'wine' ('wine_id', 'kind', 'name', 'description', 'alcohol_percentage') VALUES ('3', '2', 'Agnes', 'lekkere wijn', '10.50')");
+            database.execSQL("INSERT INTO 'wine' ('wine_id', 'kind', 'name', 'description', 'alcohol_percentage') VALUES ('4', '3', 'Coquille Rosé', 'lekkere wijn', '9.50')");
+
+            database.execSQL("INSERT INTO 'event' ('event_id', 'name', 'places') VALUES ('1', 'Wijnen uit Africe', '75')");
+            database.execSQL("INSERT INTO 'event' ('event_id', 'name', 'places') VALUES ('2', 'Wijn maken deel 1', '75')");
+            database.execSQL("INSERT INTO 'event' ('event_id', 'name', 'places') VALUES ('3', 'Wijnen uit Frankrijk', '75')");
         }
     };
 }
