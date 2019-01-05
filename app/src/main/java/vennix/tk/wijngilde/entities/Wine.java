@@ -3,24 +3,24 @@ package vennix.tk.wijngilde.entities;
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import vennix.tk.wijngilde.daos.KindDAO;
-import vennix.tk.wijngilde.database.WijnGildeDatabase;
 
 @Entity(tableName = "wine",
         foreignKeys = @ForeignKey(entity = Kind.class,
-                parentColumns = "kind_id",
-                childColumns = "kind"))
+                parentColumns = "id",
+                childColumns = "kind_id"),
+        indices = {@Index("kind_id")})
 public class Wine {
     @PrimaryKey (autoGenerate = true)
-    @ColumnInfo(name = "wine_id")
+    @ColumnInfo(name = "id")
     private Integer id;
-    @ColumnInfo(name = "kind")
+    @ColumnInfo(name = "kind_id")
     private Integer kindId;
     @ColumnInfo(name = "name")
     private String name;
@@ -80,9 +80,9 @@ public class Wine {
     // Starting data to populate the db with
     public static List<Wine> getStartingData() {
         List<Wine> wines = new ArrayList<>();
-        wines.add(new Wine(new Kind("Rood").getId(), "Pomerol",
+        wines.add(new Wine(new Kind("rood").getId(), "Pomerol",
                 "Lekkere rode wijn", 12.56));
-        wines.add(new Wine(new Kind("Wit").getId(), "Anges",
+        wines.add(new Wine(new Kind("wit").getId(),  "Anges",
                 "Lekkere witte wijn", 12.56));
         return wines;
     }

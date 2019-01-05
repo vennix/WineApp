@@ -27,10 +27,10 @@ public interface KindDAO {
     @Query("SELECT * FROM kind")
     List<Kind> getAllKinds();
 
-    @Query("DELETE FROM kind WHERE kind_id = :id")
+    @Query("DELETE FROM kind WHERE id = :id")
     void delete(int id);
 
-    @Query("SELECT kind_id FROM kind WHERE name = :name")
+    @Query("SELECT id FROM kind WHERE name = :name")
     int getIdByName(String name);
 
     // if data needs to be synchronized with UI

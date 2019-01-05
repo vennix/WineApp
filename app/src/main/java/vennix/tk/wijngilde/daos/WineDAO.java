@@ -28,7 +28,7 @@ public interface WineDAO {
     LiveData<List<Wine>> getAllWines();
     //List<Wine> getAllWines();
 
-    @Query("DELETE FROM wine WHERE wine_id = :id")
+    @Query("DELETE FROM wine WHERE id = :id")
     void delete(int id);
 
     // if data needs to be synchronized with UI

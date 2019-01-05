@@ -4,14 +4,14 @@ import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
+import android.arch.persistence.room.TypeConverters;
 import android.arch.persistence.room.migration.Migration;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.Executors;
 
+import vennix.tk.wijngilde.converters.DateTypeConverter;
 import vennix.tk.wijngilde.daos.EventDAO;
 import vennix.tk.wijngilde.entities.Event;
 import vennix.tk.wijngilde.entities.Kind;
@@ -20,7 +20,8 @@ import vennix.tk.wijngilde.daos.KindDAO;
 import vennix.tk.wijngilde.daos.WineDAO;
 
 
-@Database(entities = {Wine.class, Kind.class, Event.class}, version = 6)
+@Database(entities = {Wine.class, Kind.class, Event.class}, version = 1)
+@TypeConverters({DateTypeConverter.class})
 public abstract class WijnGildeDatabase extends RoomDatabase {
 
     public abstract WineDAO wineDao();
@@ -41,16 +42,30 @@ public abstract class WijnGildeDatabase extends RoomDatabase {
                                 @Override
                                 public void onCreate(@NonNull SupportSQLiteDatabase db) {
                                     super.onCreate(db);
+                                    /*
+                                    Executors.newSingleThreadScheduledExecutor().execute(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            getDatabase(context).kindDao().insertList(Kind.getStartingData());
+                                        }
+                                    });
+                                    */
                                     Executors.newSingleThreadScheduledExecutor().execute(new Runnable() {
                                         @Override
                                         public void run() {
                                             getDatabase(context).wineDao().insertList(Wine.getStartingData());
                                         }
                                     });
+                                    Executors.newSingleThreadScheduledExecutor().execute(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            getDatabase(context).eventDao().insertList(Event.getStartingData());
+                                        }
+                                    });
                                 }
                             })
-                            .addMigrations(MIGRATION_5_6)
-                            //.fallbackToDestructiveMigration()
+                            //.addMigrations(MIGRATION_5_6)
+                            .fallbackToDestructiveMigration()
                             .build();
                 }
             }
@@ -59,6 +74,7 @@ public abstract class WijnGildeDatabase extends RoomDatabase {
     }
 
     //migration from db version 1 to db version 2
+    /*
     static final Migration MIGRATION_5_6 = new Migration(5, 6) {
         @Override
         public void migrate(@NonNull SupportSQLiteDatabase database) {
@@ -76,4 +92,5 @@ public abstract class WijnGildeDatabase extends RoomDatabase {
             database.execSQL("INSERT INTO 'event' ('event_id', 'name', 'places') VALUES ('3', 'Wijnen uit Frankrijk', '75')");
         }
     };
+    */
 }

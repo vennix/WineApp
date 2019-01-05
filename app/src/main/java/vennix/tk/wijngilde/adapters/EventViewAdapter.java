@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import vennix.tk.wijngilde.R;
@@ -13,6 +14,7 @@ import vennix.tk.wijngilde.entities.Event;
 
 public class EventViewAdapter extends RecyclerView.Adapter<EventViewAdapter.RecyclerViewHolder> {
     private List<Event> eventList;
+    private OnItemClickListener listener;
 
     public EventViewAdapter(List<Event> eventList) {
         this.eventList = eventList;
@@ -28,6 +30,7 @@ public class EventViewAdapter extends RecyclerView.Adapter<EventViewAdapter.Recy
     public void onBindViewHolder(EventViewAdapter.RecyclerViewHolder recyclerViewHolder, int position) {
         Event event = eventList.get(position);
         recyclerViewHolder.nameTextView.setText(event.getName());
+        recyclerViewHolder.dateTextView.setText(new SimpleDateFormat("dd-MM-yyyy").format(event.getDate()));
         recyclerViewHolder.placesTextView.setText(Integer.toString(event.getPlaces()));
         recyclerViewHolder.itemView.setTag(event);
         //recyclerViewHolder.itemView.setOnLongClickListener(longClickListener);
@@ -43,16 +46,37 @@ public class EventViewAdapter extends RecyclerView.Adapter<EventViewAdapter.Recy
         notifyDataSetChanged();
     }
 
-    static class RecyclerViewHolder extends RecyclerView.ViewHolder {
+    class RecyclerViewHolder extends RecyclerView.ViewHolder {
         //private TextView itemTextView;
         private TextView nameTextView;
+        private TextView dateTextView;
         private TextView placesTextView;
 
         RecyclerViewHolder(View view) {
             super(view);
             //itemTextView = (TextView) view.findViewById(R.id.itemTextView);
             nameTextView = (TextView) view.findViewById(R.id.nameTextView);
+            dateTextView = (TextView) view.findViewById(R.id.dateTextView);
             placesTextView = (TextView) view.findViewById(R.id.placesTextView);
+
+            // handle onClick in list
+            view.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    int position = getAdapterPosition();
+                    if (listener != null && position != RecyclerView.NO_POSITION) {
+                        listener.onItemClicked(eventList.get(position));
+                    }
+                }
+            });
         }
+    }
+
+    public interface OnItemClickListener {
+        void onItemClicked(Event event);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.listener = listener;
     }
 }

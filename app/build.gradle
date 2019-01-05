@@ -9,6 +9,13 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        // bron: https://developer.android.com/reference/android/arch/persistence/room/Database#exportSchema()
+        // -> it is a good practice to have version history in your codebase and you should commit that file into your version control system (but don't ship it with your app!).
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
     }
     buildTypes {
         release {

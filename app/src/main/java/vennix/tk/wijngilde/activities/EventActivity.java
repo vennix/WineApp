@@ -2,6 +2,7 @@ package vennix.tk.wijngilde.activities;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -39,6 +40,16 @@ public class EventActivity extends AppCompatActivity {
             @Override
             public void onChanged(@Nullable List<Event> events) {
                 eventViewAdapter.addItems(events);
+            }
+        });
+
+        // handle onClick on listItem
+        eventViewAdapter.setOnItemClickListener(new EventViewAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClicked(Event event) {
+                Intent intent = new Intent(getBaseContext(), EventDetailActivity.class);
+                intent.putExtra("event", event);
+                startActivity(intent);
             }
         });
     }

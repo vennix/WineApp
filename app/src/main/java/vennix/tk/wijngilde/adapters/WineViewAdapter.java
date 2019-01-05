@@ -29,6 +29,7 @@ public class WineViewAdapter extends RecyclerView.Adapter<WineViewAdapter.Recycl
     public void onBindViewHolder(RecyclerViewHolder recyclerViewHolder, int position) {
         Wine wine = wineList.get(position);
         recyclerViewHolder.nameTextView.setText(wine.getName());
+        //recyclerViewHolder.kindTextView.setText(Integer.toString(wine.getKindId()));
         recyclerViewHolder.alcPercentTextView.setText(wine.getAlcoholPercentage().toString());
         //recyclerViewHolder.dateTextView.setText(borrowModel.getBorrowDate().toLocaleString().substring(0, 11));
         recyclerViewHolder.itemView.setTag(wine);
@@ -46,14 +47,14 @@ public class WineViewAdapter extends RecyclerView.Adapter<WineViewAdapter.Recycl
     }
 
     static class RecyclerViewHolder extends RecyclerView.ViewHolder {
-        //private TextView itemTextView;
         private TextView nameTextView;
+        //private TextView kindTextView;
         private TextView alcPercentTextView;
 
         RecyclerViewHolder(View view) {
             super(view);
-            //itemTextView = (TextView) view.findViewById(R.id.itemTextView);
             nameTextView = (TextView) view.findViewById(R.id.nameTextView);
+            //kindTextView = (TextView) view.findViewById(R.id.kindTextView);
             alcPercentTextView = (TextView) view.findViewById(R.id.alcPercentTextView);
         }
     }

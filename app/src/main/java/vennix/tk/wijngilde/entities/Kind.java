@@ -10,7 +10,7 @@ import java.util.List;
 @Entity(tableName = "kind")
 public class Kind {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "kind_id")
+    @ColumnInfo(name = "id")
     private Integer id;
     @ColumnInfo(name = "name")
     private String name;

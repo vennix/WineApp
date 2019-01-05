@@ -49,6 +49,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activities.EventDetailActivity"
+            android:label="WineDetailActivity" >
+            <intent-filter>
+                <action android:name="vennix.tk.wijngilde.activities.EventDetailActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

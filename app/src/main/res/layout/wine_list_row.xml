@@ -4,28 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:layout_editor_absoluteY="81dp">
+    tools:layout_editor_absoluteY="25dp">
 
 
     <TextView
         android:id="@+id/nameTextView"
-        android:layout_width="98dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_width="0dp"
+        android:layout_height="19dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="31dp"
         android:text="TextView"
         app:layout_constraintBottom_toTopOf="@+id/alcPercentTextView"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/alcPercentTextView"
+        app:layout_constraintStart_toStartOf="@+id/alcPercentTextView"
         app:layout_constraintTop_toTopOf="parent" />
-
+    <!--
+    <TextView
+        android:id="@+id/kindTextView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="146dp"
+        android:layout_marginRight="146dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/nameTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nameTextView"
+        app:layout_constraintTop_toTopOf="@+id/nameTextView" />
+        -->
     <TextView
         android:id="@+id/alcPercentTextView"
         android:layout_width="wrap_content"
-        android:layout_height="24dp"
+        android:layout_height="21dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
