@@ -16,10 +16,10 @@ public class WineViewModel extends AndroidViewModel {
     private final LiveData<List<Wine>> wineList;
     private WineRepository wineRepo;
 
-    public WineViewModel(@NonNull Application application) {
+    public WineViewModel(@NonNull Application application, int id) {
         super(application);
         wineRepo = new WineRepository(this.getApplication());
-        wineList = wineRepo.getAllWines();
+        wineList = wineRepo.getWinesByKind(id);
     }
 
     public LiveData<List<Wine>> getWineList() {

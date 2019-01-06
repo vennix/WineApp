@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import vennix.tk.wijngilde.activities.EventActivity;
+import vennix.tk.wijngilde.activities.KindActivity;
 import vennix.tk.wijngilde.activities.MemberActivity;
 import vennix.tk.wijngilde.activities.WineActivity;
 
@@ -112,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 this.startActivity(intent);
                 break;
             case "wines":
-                intent = new Intent(this, WineActivity.class);
+                intent = new Intent(this, KindActivity.class);
                 this.startActivity(intent);
                 break;
             case "member":

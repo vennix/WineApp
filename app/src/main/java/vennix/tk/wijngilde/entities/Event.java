@@ -24,11 +24,14 @@ public class Event implements Serializable {
     private int places;
     @ColumnInfo(name = "date")
     private Date date;
+    @ColumnInfo(name = "description")
+    private String description;
 
-    public Event(String name, int places, Date date) {
+    public Event(String name, int places, Date date, String description) {
         this.name = name;
         this.places = places;
         this.date = date;
+        this.description = description;
     }
 
     public Integer getId() {
@@ -59,12 +62,21 @@ public class Event implements Serializable {
 
     public void setDate(Date date) { this.date = date; }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public String toString() {
         return "Event{" +
                 "name='" + name + '\'' +
                 ", places=" + places +
                 ", date=" + date +
+                ", description='" + description + '\'' +
                 '}';
     }
 
@@ -76,12 +88,12 @@ public class Event implements Serializable {
         SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy");
         List<Event> events = new ArrayList<>();
         try{
-            events.add(new Event("Wijnen uit afrika",
-                    75, format.parse(sDate1)));
+            events.add(new Event("Wijnen uit Afrika",
+                    75, format.parse(sDate1), "We overlopen de meest gekende wijnen uit Afrika, alsook de betere opkomende wijnhuizen. Er zal een assortiment van 15 wijnen gepresenteerd worden waarvan gedegusteerd kan worden. Er is ook de mogelijkheid om enkele wijnen te bestellen."));
             events.add(new Event("Wijn maken deel 1",
-                    75, format.parse(sDate2)));
-            events.add(new Event("Wijnen uit afrika",
-                    75, format.parse(sDate3)));
+                    75, format.parse(sDate2), "De avond zal starten met een voorstelling over de basis benodigdheden om wijn te maken. We overlopen de verschillende stappen die genomen worden in de wijngaard omdat nu eenmaal dit de basis is om een goede wijn te bouwen. "));
+            events.add(new Event("Wijnen uit Frankrijk deel 1",
+                    75, format.parse(sDate3), "Een voorstelling van de betere witte wijnen uit Frankrijk en hun streken. Na de voorstelling is er een degustatie gepland waar een 20 tal wijnen kunnen geproeft worden. Deel 2 zal over de champange gaan."));
         } catch (ParseException ex) {
             Log.e(ex.getMessage(), "index");
         }

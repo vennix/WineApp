@@ -28,6 +28,12 @@ public interface WineDAO {
     LiveData<List<Wine>> getAllWines();
     //List<Wine> getAllWines();
 
+    @Query("SELECT * FROM wine WHERE kind_id = :id")
+    LiveData<List<Wine>> getWinesByKind(int id);
+
+    @Query("SELECT * FROM wine WHERE id = :id")
+    Wine getWineById(int id);
+
     @Query("DELETE FROM wine WHERE id = :id")
     void delete(int id);
 

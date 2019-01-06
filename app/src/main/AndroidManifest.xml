@@ -26,14 +26,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.WineDetailActivity"
-            android:label="WineDetailActivity" >
-            <intent-filter>
-                <action android:name="vennix.tk.wijngilde.activities.WineDetailActivity" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".activities.MemberActivity"
             android:label="WineDetailActivity" >
             <intent-filter>
@@ -57,6 +49,13 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activities.KindActivity"
+            android:label="WineDetailActivity" >
+            <intent-filter>
+                <action android:name="vennix.tk.wijngilde.activities.KindActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
-
 </manifest>

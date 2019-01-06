@@ -8,8 +8,23 @@
     android:id="@+id/activity_wines"
     tools:context=".activities.WineActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/wine_list"
+    <FrameLayout
+        android:id="@+id/list_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/wine_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+    <!-- Placeholder for the detail fragment-->
+    <FrameLayout
+        android:id="@+id/detail_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
 </android.support.design.widget.CoordinatorLayout>

@@ -8,6 +8,7 @@ import android.arch.persistence.room.Query;
 
 import java.util.List;
 
+import vennix.tk.wijngilde.entities.Event;
 import vennix.tk.wijngilde.entities.Kind;
 import vennix.tk.wijngilde.entities.Wine;
 
@@ -25,7 +26,7 @@ public interface KindDAO {
     void upsert(Kind... kind);
 
     @Query("SELECT * FROM kind")
-    List<Kind> getAllKinds();
+    LiveData<List<Kind>> getAllKinds();
 
     @Query("DELETE FROM kind WHERE id = :id")
     void delete(int id);

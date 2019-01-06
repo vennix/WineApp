@@ -35,6 +35,16 @@ public class WineRepository {
         return wines;
     }
 
+    public LiveData<List<Wine>> getWinesByKind(int id){
+        LiveData<List<Wine>> wines = mWineDao.getWinesByKind(id);
+        return wines;
+    }
+
+    public Wine getWineById(int wineId){
+        Wine wine =mWineDao.getWineById(wineId);
+        return wine;
+    }
+
     private static class GetWinesAsyncTask extends AsyncTask<Void, Void, LiveData<List<Wine>>> {
         private WineDAO mWineDao;
 

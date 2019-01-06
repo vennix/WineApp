@@ -53,6 +53,12 @@ public abstract class WijnGildeDatabase extends RoomDatabase {
                                     Executors.newSingleThreadScheduledExecutor().execute(new Runnable() {
                                         @Override
                                         public void run() {
+                                            getDatabase(context).kindDao().insertList(Kind.getStartingData());
+                                        }
+                                    });
+                                    Executors.newSingleThreadScheduledExecutor().execute(new Runnable() {
+                                        @Override
+                                        public void run() {
                                             getDatabase(context).wineDao().insertList(Wine.getStartingData());
                                         }
                                     });
