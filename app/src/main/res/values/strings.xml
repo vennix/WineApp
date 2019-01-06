@@ -14,4 +14,6 @@
     <string name="who_we_are_text">"We are a foundation that deals with everything that has to do with wine. For example, we organize a weekly evening to taste wine. Every week this evening is organized with a different theme. Furthermore, we organize annually different events to which all members are welcome. We also make a few ourselves wines that can be tasted and bought on every wine-tasting evening in our members' house. Since we already have 30 years of experience in this, we can still speak of a few top wines within our range. If you are interested in becoming a member, please read the 'Becoming a member' section. It explains how you can join your member make our union."</string>
     <string name="become_member_title">Becoming a member</string>
     <string name="become_member_text">You can become a member by registering at our secretary. He is present at every test evening and event. You will be annual membership fee of 25 € must be paid and you must enter some information. This will create a login and password with which you use this application will have the opportunity to register for events.</string>
+    <string name="menu_events_clean_up">Remove past events</string>
+    <string name="title_activity_event_clean_up_service">EventCleanUpServiceActivity</string>
 </resources>

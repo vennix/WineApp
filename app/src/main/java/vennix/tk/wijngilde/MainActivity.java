@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import vennix.tk.wijngilde.activities.EventActivity;
+import vennix.tk.wijngilde.activities.EventCleanUpServiceActivity;
 import vennix.tk.wijngilde.activities.KindActivity;
 import vennix.tk.wijngilde.activities.MemberActivity;
 import vennix.tk.wijngilde.activities.WineActivity;
@@ -57,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
                                 break;
                             case R.id.nav_member:
                                 startSelectedMenuActivity("member");
+                                break;
+                            case R.id.events_clean_up:
+                                startSelectedMenuActivity("events_clean_up");
                                 break;
                             default:
                                 return true;
@@ -119,6 +123,16 @@ public class MainActivity extends AppCompatActivity {
             case "member":
                 intent = new Intent(this, MemberActivity.class);
                 this.startActivity(intent);
+                break;
+            case "events_clean_up":
+                /*
+                Intent intentService =  new Intent();
+                intentService.setClass(this, EventCleanUpIntentService.class);
+                startService(intentService);
+                */
+                intent = new Intent(this, EventCleanUpServiceActivity.class);
+                this.startActivity(intent);
+
                 break;
             default:
                 mDrawerLayout.openDrawer(GravityCompat.START);

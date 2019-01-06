@@ -7,8 +7,6 @@ import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
 import java.util.List;
-
-import vennix.tk.wijngilde.entities.Event;
 import vennix.tk.wijngilde.entities.Kind;
 import vennix.tk.wijngilde.entities.Wine;
 

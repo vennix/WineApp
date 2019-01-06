@@ -4,6 +4,7 @@ import android.app.Application;
 import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
 
+import java.util.Date;
 import java.util.List;
 
 import vennix.tk.wijngilde.daos.EventDAO;
@@ -27,6 +28,10 @@ public class EventRepository {
     public LiveData<List<Event>> getAllEvents(){
         LiveData<List<Event>> events = mEventDao.getAllEvents();
         return events;
+    }
+
+    public void deletePastEvents(Date date){
+        mEventDao.deletePastEvents(date);
     }
 
     private static class GetEventsAsyncTask extends AsyncTask<Void, Void, LiveData<List<Event>>> {

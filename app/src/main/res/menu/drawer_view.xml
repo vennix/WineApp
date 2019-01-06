@@ -13,5 +13,9 @@
             android:id="@+id/nav_member"
             android:icon="@drawable/ic_menu_membership"
             android:title="@string/menu_membership" />
+        <item
+            android:id="@+id/events_clean_up"
+            android:icon="@drawable/ic_menu_membership"
+            android:title="@string/menu_events_clean_up" />
     </group>
 </menu>

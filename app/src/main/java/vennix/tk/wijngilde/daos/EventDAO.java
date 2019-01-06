@@ -6,6 +6,7 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
 
+import java.util.Date;
 import java.util.List;
 
 import vennix.tk.wijngilde.entities.Event;
@@ -28,6 +29,9 @@ public interface EventDAO {
 
     @Query("DELETE FROM event WHERE event_id = :id")
     void delete(int id);
+
+    @Query("DELETE FROM event WHERE date < :date")
+    void deletePastEvents(Date date);
 
     // if data needs to be synchronized with UI
     @Query("SELECT * FROM event ORDER BY name ASC")
