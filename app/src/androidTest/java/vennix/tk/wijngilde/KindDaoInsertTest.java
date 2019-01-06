@@ -37,7 +37,14 @@ public class KindDaoInsertTest {
     @Test
     public void insert() throws Exception {
         Kind kind = new Kind("rood");
-        kindDao.insert(kind);
-        assertEquals("1", Integer.toString(kindDao.getNumberOfElementsInTable()));
+        /*
+         * bron: https://developer.android.com/training/data-storage/room/accessing-data
+         * If the @Insert method receives only 1 parameter, it can return a long,
+         * which is the new rowId for the inserted item. If the parameter is an array
+         * or a collection, it should return long[] or List<Long> instead.
+         *
+         * This db is empty, so should return 1 for first element in table.
+         */
+        assertEquals("1", String.valueOf(kindDao.insert(kind)));
     }
 }
