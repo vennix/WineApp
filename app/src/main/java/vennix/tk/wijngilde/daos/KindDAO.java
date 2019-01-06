@@ -31,6 +31,9 @@ public interface KindDAO {
     @Query("DELETE FROM kind WHERE id = :id")
     void delete(int id);
 
+    @Query("SELECT COUNT(id) FROM kind")
+    int getNumberOfElementsInTable();
+
     @Query("SELECT id FROM kind WHERE name = :name")
     int getIdByName(String name);
 
