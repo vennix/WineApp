@@ -22,4 +22,5 @@
     <string name="places_title">Places</string>
     <string name="date_title">Date</string>
     <string name="description_title">Description</string>
+    <string name="clean_events_up">Delete past events</string>
 </resources>

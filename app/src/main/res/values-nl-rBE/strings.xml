@@ -23,4 +23,5 @@
     <string name="date_title">Datum</string>
     <string name="description_title">Omschrijving</string>
     <string name="places_title">Plaatsen</string>
+    <string name="clean_events_up">Verlopen evenementen verwijderen</string>
 </resources>
