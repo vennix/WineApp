@@ -23,4 +23,6 @@
     <string name="date_title">Date</string>
     <string name="description_title">Description</string>
     <string name="clean_events_up">Delete past events</string>
+    <string name="title_activity_event_clean_up_service">Clean up events</string>
+    <string name="hello_blank_fragment">Detail Wine</string>
 </resources>

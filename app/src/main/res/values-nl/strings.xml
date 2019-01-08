@@ -24,4 +24,6 @@
     <string name="description_title">Omschrijving</string>
     <string name="places_title">Plaatsen</string>
     <string name="clean_events_up">Verlopen evenementen verwijderen</string>
+    <string name="title_activity_event_clean_up_service">Evenementen opkuisen</string>
+    <string name="hello_blank_fragment">Detail Wijn</string>
 </resources>
