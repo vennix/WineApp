@@ -45,12 +45,11 @@ public class KindViewAdapter extends RecyclerView.Adapter<KindViewAdapter.Recycl
     }
 
     class RecyclerViewHolder extends RecyclerView.ViewHolder {
-        //private TextView itemTextView;
         private TextView nameTextView;
 
         RecyclerViewHolder(View view) {
             super(view);
-            nameTextView = (TextView) view.findViewById(R.id.nameTextView);
+            nameTextView = view.findViewById(R.id.nameTextView);
         }
     }
 }

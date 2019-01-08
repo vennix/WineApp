@@ -1,7 +1,7 @@
 package vennix.tk.wijngilde.adapters;
 
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +14,6 @@ import vennix.tk.wijngilde.entities.Wine;
 
 public class WineViewAdapter extends RecyclerView.Adapter<WineViewAdapter.RecyclerViewHolder> {
     private List<Wine> wineList;
-    private WineViewAdapter.OnItemClickListener listener;
 
     public WineViewAdapter(List<Wine> wineList) {
         this.wineList = wineList;
@@ -30,11 +29,9 @@ public class WineViewAdapter extends RecyclerView.Adapter<WineViewAdapter.Recycl
     public void onBindViewHolder(RecyclerViewHolder recyclerViewHolder, int position) {
         Wine wine = wineList.get(position);
         recyclerViewHolder.nameTextView.setText(wine.getName());
-        //recyclerViewHolder.kindTextView.setText(Integer.toString(wine.getKindId()));
-        recyclerViewHolder.alcPercentTextView.setText(wine.getAlcoholPercentage().toString());
-        //recyclerViewHolder.dateTextView.setText(borrowModel.getBorrowDate().toLocaleString().substring(0, 11));
+        recyclerViewHolder.yearTextView.setText(wine.getYear());
+        recyclerViewHolder.producerTextView.setText(wine.getHouse());
         recyclerViewHolder.itemView.setTag(wine);
-        //recyclerViewHolder.itemView.setOnLongClickListener(longClickListener);
     }
 
     @Override
@@ -47,16 +44,23 @@ public class WineViewAdapter extends RecyclerView.Adapter<WineViewAdapter.Recycl
         notifyDataSetChanged();
     }
 
-    class RecyclerViewHolder extends RecyclerView.ViewHolder {
+    class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private TextView nameTextView;
-        //private TextView kindTextView;
-        private TextView alcPercentTextView;
+        private TextView yearTextView;
+        private TextView producerTextView;
 
         RecyclerViewHolder(View view) {
             super(view);
-            nameTextView = (TextView) view.findViewById(R.id.nameTextView);
-            //kindTextView = (TextView) view.findViewById(R.id.kindTextView);
-            alcPercentTextView = (TextView) view.findViewById(R.id.alcPercentTextView);
+            view.setOnClickListener(this);
+            nameTextView = view.findViewById(R.id.nameTextView);
+            yearTextView = view.findViewById(R.id.yearTextView);
+            producerTextView = view.findViewById(R.id.producerTextView);
+        }
+
+        @Override
+        public void onClick(View v) {
+
+            Log.e("result", "index");
         }
     }
 
@@ -64,7 +68,4 @@ public class WineViewAdapter extends RecyclerView.Adapter<WineViewAdapter.Recycl
         void onItemClicked(Wine wine);
     }
 
-    public void setOnItemClickListener(WineViewAdapter.OnItemClickListener listener){
-        this.listener = listener;
-    }
 }

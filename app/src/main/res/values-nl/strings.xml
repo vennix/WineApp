@@ -16,9 +16,9 @@
     <string name="become_member_title">Lid worden</string>
     <string name="become_member_text">Je kan lid worden door je in te schrijven bij onze secretaris. Hij is op elke proefavond en evenement aanwezig. Je zal je jaarlijks lidgeld van 25€ dienen te voldoen en alsook dien je enkele gegevens in te vullen. Hiermee zal er een login en paswoord aangemaakt worden waarmee je via deze applicatie de mogelijkheid zal hebben om je in te schrijven op evenementen.</string>
     <string name="menu_events_clean_up">Verwijder verlopen evenementen</string>
-    <string name="places">Plaatsen</string>
-    <string name="event">Evenement</string>
-    <string name="date">Datum</string>
+    <string name="places">Plaatsen:</string>
+    <string name="event">Evenement:</string>
+    <string name="date">Datum:</string>
     <string name="event_title">Evenement</string>
     <string name="date_title">Datum</string>
     <string name="description_title">Omschrijving</string>

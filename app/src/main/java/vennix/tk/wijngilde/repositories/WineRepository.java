@@ -20,12 +20,6 @@ public class WineRepository {
         mWineDao = myDb.wineDao();
     }
 
-    /*
-    public void getAllWines(@NonNull LoadDataCallback<Wine> activityCallback) {
-        new GetWinesAsyncTask(mWineDao, activityCallback).execute();
-    }
-    */
-
     public WineDAO getmWineDao() {
         return mWineDao;
     }

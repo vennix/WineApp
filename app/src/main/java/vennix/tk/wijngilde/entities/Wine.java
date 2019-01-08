@@ -11,7 +11,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-
 @Entity(tableName = "wine",
         foreignKeys = @ForeignKey(entity = Kind.class,
                 parentColumns = "id",

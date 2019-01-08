@@ -15,5 +15,11 @@
     <string name="become_member_title">Becoming a member</string>
     <string name="become_member_text">You can become a member by registering at our secretary. He is present at every test evening and event. You will be annual membership fee of 25 € must be paid and you must enter some information. This will create a login and password with which you use this application will have the opportunity to register for events.</string>
     <string name="menu_events_clean_up">Remove past events</string>
-    <string name="title_activity_event_clean_up_service">EventCleanUpServiceActivity</string>
+    <string name="places">Places:</string>
+    <string name="event">Event:</string>
+    <string name="date">Date:</string>
+    <string name="event_title">Event</string>
+    <string name="places_title">Places</string>
+    <string name="date_title">Date</string>
+    <string name="description_title">Description</string>
 </resources>

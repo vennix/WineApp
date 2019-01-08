@@ -1,9 +1,7 @@
 package vennix.tk.wijngilde.activities;
 
-import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -16,10 +14,13 @@ import java.util.List;
 import vennix.tk.wijngilde.R;
 import vennix.tk.wijngilde.adapters.WineViewAdapter;
 import vennix.tk.wijngilde.entities.Wine;
+import vennix.tk.wijngilde.fragments.WineDetailFragment;
+import vennix.tk.wijngilde.fragments.WineListFragment;
 import vennix.tk.wijngilde.viewmodels.ViewModelFactory;
 import vennix.tk.wijngilde.viewmodels.WineViewModel;
 
-public class WineActivity extends AppCompatActivity {
+public class WineActivity extends AppCompatActivity
+        implements WineListFragment.OnItemSelectedListener {
     private WineViewModel wineViewModel;
     private WineViewAdapter wineViewAdapter;
     private RecyclerView recyclerView;
@@ -41,7 +42,8 @@ public class WineActivity extends AppCompatActivity {
             kindId = (int) extras.get("kind_id");
         }
 
-        wineViewModel = ViewModelProviders.of(this, new ViewModelFactory(getApplication(), kindId)).get(WineViewModel.class);
+        wineViewModel = ViewModelProviders.of(this,
+                new ViewModelFactory(getApplication(), kindId)).get(WineViewModel.class);
 
         wineViewModel.getWineList().observe(this, new Observer<List<Wine>>() {
             @Override
@@ -49,16 +51,17 @@ public class WineActivity extends AppCompatActivity {
                 wineViewAdapter.addItems(wines);
             }
         });
+    }
 
-        // handle onClick on listItem
-        wineViewAdapter.setOnItemClickListener(new WineViewAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClicked(Wine wine) {
-                Intent intent = new Intent(getBaseContext(), EventDetailActivity.class);
-                intent.putExtra("wine", wine);
-                startActivity(intent);
-            }
-        });
+    @Override
+    public void onRssItemSelected(String text) {
+        WineDetailFragment fragment = (WineDetailFragment) getFragmentManager()
+                .findFragmentById(R.id.detailFragment);
+        fragment.setText(text);
     }
 
 }
+
+
+
+

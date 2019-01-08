@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="25dp">
 
     <FrameLayout
         android:id="@+id/content_member"
@@ -11,10 +12,8 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/background"
@@ -38,21 +37,21 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="7dp"
                 android:text="@string/who_we_are_title" />
 
             <TextView
                 android:id="@+id/who_we_are_text"
-                android:layout_width="300dp"
+                android:layout_width="516dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="9dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="29dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="27dp"
                 android:text="@string/who_we_are_text" />
 
             <TextView
@@ -62,21 +61,21 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="9dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="300dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="187dp"
                 android:text="@string/become_member_title" />
 
             <TextView
                 android:id="@+id/become_member_text"
-                android:layout_width="304dp"
+                android:layout_width="511dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="11dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="320dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="204dp"
                 android:text="@string/become_member_text" />
 
         </RelativeLayout>

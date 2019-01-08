@@ -33,7 +33,6 @@ public class EventViewAdapter extends RecyclerView.Adapter<EventViewAdapter.Recy
         recyclerViewHolder.dateTextView.setText(new SimpleDateFormat("dd-MM-yyyy").format(event.getDate()));
         recyclerViewHolder.placesTextView.setText(Integer.toString(event.getPlaces()));
         recyclerViewHolder.itemView.setTag(event);
-        //recyclerViewHolder.itemView.setOnLongClickListener(longClickListener);
     }
 
     @Override
@@ -47,17 +46,15 @@ public class EventViewAdapter extends RecyclerView.Adapter<EventViewAdapter.Recy
     }
 
     class RecyclerViewHolder extends RecyclerView.ViewHolder {
-        //private TextView itemTextView;
         private TextView nameTextView;
         private TextView dateTextView;
         private TextView placesTextView;
 
         RecyclerViewHolder(View view) {
             super(view);
-            //itemTextView = (TextView) view.findViewById(R.id.itemTextView);
-            nameTextView = (TextView) view.findViewById(R.id.nameTextView);
-            dateTextView = (TextView) view.findViewById(R.id.dateTextView);
-            placesTextView = (TextView) view.findViewById(R.id.placesTextView);
+            nameTextView = view.findViewById(R.id.nameTextView);
+            dateTextView = view.findViewById(R.id.dateTextView);
+            placesTextView = view.findViewById(R.id.placesTextView);
 
             // handle onClick in list
             view.setOnClickListener(new View.OnClickListener(){
